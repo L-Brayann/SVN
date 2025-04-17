@@ -1,13 +1,13 @@
 .intro-content {
   position: relative;
-  /* top: -8rem; */
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: var(--gap);
   min-height: 100vh;
 }
 
-.intro-text-content, .intro-img {
+.intro-text-content,
+.intro-img {
   flex-flow: column wrap;
   justify-content: center;
 }
@@ -63,7 +63,7 @@
 .social-btn img {
   width: 22px;
   height: 28px;
-  filter: brightness(0) invert(1); /* branco sobre fundo preto */
+  filter: brightness(0) invert(1);
   transition: filter 0.3s ease;
 }
 
@@ -73,21 +73,18 @@
 }
 
 .social-btn:hover img {
-  filter: brightness(0); /* preto sobre fundo branco */
+  filter: brightness(0);
 }
-
 
 .imagem {
   animation: vaiVolta 4s ease-in-out infinite;
 }
 
 @keyframes vaiVolta {
-  0%   { transform: translateX(0); }
-  50%  { transform: translateX(20px); }
+  0% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
   100% { transform: translateX(0); }
 }
-
-
 
 .slider {
   position: relative;
@@ -112,12 +109,11 @@
 .slide img {
   width: 100%;
   height: 600px;
-  object-fit: contain; /* mostra a imagem inteira */
+  object-fit: contain;
   border-radius: 10px;
   display: block;
-  background-color: black; /* cor de fundo opcional pra preencher onde sobrar espaço */
+  background-color: black;
 }
-
 
 .indicator-container {
   display: flex;
@@ -207,10 +203,9 @@
 
 .form-grid legend {
   font-style: italic;
-  font-size: 1.6rem; 
+  font-size: 1.6rem;
   margin-bottom: 3rem;
 }
-
 
 .form-group label {
   display: block;
@@ -231,7 +226,6 @@
 .form-group textarea:focus {
   box-shadow: 0 0 10px 2px var(--secondary-color);
 }
-
 
 .form-group ::placeholder {
   color: var(--light-gray-color);
@@ -276,7 +270,12 @@
 }
 
 @media (max-width: 800px) {
-  /* Esconde apenas os links do menu */
+
+  .intro-img img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
   .menu-links {
     display: none;
   }
@@ -295,23 +294,22 @@
   }
 
   .menu {
-    position: static; /* Mudei de 'fixed' para 'static' */
-    background: var(--primary-color); /* fundo do menu */
+    position: static;
+    background: var(--primary-color);
     z-index: 1000;
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem; /* REDUZIDO */
     border-bottom: 1px solid var(--black-color);
   }
 
   .menu-content {
     height: auto;
-    padding: 1rem 0;
-
+    padding: 0.5rem 0; /* REDUZIDO */
     display: flex;
-    flex-direction: column; /* empilha os elementos */
+    flex-direction: column;
     justify-content: center;
-    align-items: center; /* <-- centraliza horizontalmente */
-    text-align: center; /* <-- centraliza o texto dentro do h1 */
+    align-items: center;
+    text-align: center;
   }
 
   .menu-content ul {
@@ -320,27 +318,32 @@
   }
 
   .menu-content h1 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* REDUZIDO */
     color: black;
     width: 100%;
     text-align: center;
+    margin: 0.5rem 0; /* REDUZIDO */
   }
 
-  /* Botão hambúrguer */
+  .menu ul li a {
+    padding: 0.8rem; /* REDUZIDO */
+    font-size: 1.6rem; /* Opcional, se quiser ainda mais compacto */
+  }
+
   .close-menu-label::after {
     content: '☰';
     position: fixed;
     z-index: 1100;
-    top: 2rem;
-    right: 2rem;
+    top: 1rem; /* REDUZIDO */
+    right: 1rem;
     background: #F2D5BB;
     color: var(--white-color);
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 2.8rem;
+    line-height: 2.8rem;
     width: 3rem;
     height: 3rem;
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.3rem;
     cursor: pointer;
   }
 
@@ -356,27 +359,18 @@
     display: none;
   }
 
-  h1 {
-    font-size: 4rem;
+  h1 { font-size: 4rem; }
+  h2 { font-size: 3.6rem; }
+  h3 { font-size: 3.4rem; }
+  h4 { font-size: 3.2rem; }
+  h5 { font-size: 3rem; }
+  h6 { font-size: 2.8rem; }
+
+  .main-content {
+    padding: 2rem 1.5rem;
   }
 
-  h2 {
-    font-size: 3.6rem;
-  }
-
-  h3 {
-    font-size: 3.4rem;
-  }
-
-  h4 {
-    font-size: 3.2rem;
-  }
-
-  h5 {
-    font-size: 3rem;
-  }
-
-  h6 {
-    font-size: 2.8rem;
+  .slide img {
+    height: auto;
   }
 }
